@@ -63,6 +63,7 @@ param time string = utcNow()
 // =========== //
 // Variable declaration //
 // =========== //
+var varNamingUniqueStringThreeCharStorageRG = take('${uniqueString(workloadSubsId, storageObjectsRgName)}', 3)
 
 // =========== //
 // Deployments //
@@ -84,7 +85,7 @@ module managedIdentityWait '../../../../carml/1.3.0/Microsoft.Resources/deployme
   scope: resourceGroup('${workloadSubsId}', '${storageObjectsRgName}')
   name: 'Managed-Identity-Wait-${time}'
   params: {
-      name: 'Managed-Identity-Wait-${time}'
+      name: 'Managed-Identity-Wait-${varNamingUniqueStringThreeCharStorageRG}'
       location: sessionHostLocation
       azPowerShellVersion: '8.3.0'
       cleanupPreference: 'Always'

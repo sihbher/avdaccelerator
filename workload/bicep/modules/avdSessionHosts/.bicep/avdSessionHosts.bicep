@@ -154,6 +154,8 @@ var varManagedDisk = empty(diskEncryptionSetResourceId) ? {
     }
     storageAccountType: sessionHostDiskType
 }
+var varNamingUniqueStringThreeComputeRG = take('${uniqueString(subscriptionId, computeObjectsRgName)}', 3)
+
 // =========== //
 // Deployments //
 // =========== //
@@ -255,7 +257,7 @@ module sessionHostsWait '../../../../../carml/1.3.0/Microsoft.Resources/deployme
     scope: resourceGroup('${subscriptionId}', '${computeObjectsRgName}')
     name: 'Session-Hosts-Wait-${time}'
     params: {
-        name: 'Session-Hosts-Wait-${time}'
+        name: 'Session-Hosts-Wait-${varNamingUniqueStringThreeComputeRG}'
         location: sessionHostLocation
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'
@@ -313,7 +315,7 @@ module antimalwareExtensionWait '../../../../../carml/1.3.0/Microsoft.Resources/
     scope: resourceGroup('${subscriptionId}', '${computeObjectsRgName}')
     name: 'Antimalware-Extension-Wait-${time}'
     params: {
-        name: 'Antimalware-Extension-Wait-${time}'
+        name: 'Antimalware-Extension-Wait-${varNamingUniqueStringThreeComputeRG}'
         location: sessionHostLocation
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'
@@ -369,7 +371,7 @@ module sessionHostsMonitoringWait '../../../../../carml/1.3.0/Microsoft.Resource
     scope: resourceGroup('${subscriptionId}', '${computeObjectsRgName}')
     name: 'SH-Monitoring-Wait-${time}'
     params: {
-        name: 'SH-Monitoring-Wait-${time}'
+        name: 'SH-Monitoring-Wait-${varNamingUniqueStringThreeComputeRG}'
         location: sessionHostLocation
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'
