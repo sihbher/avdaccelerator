@@ -54,7 +54,7 @@ param time string = utcNow()
 // =========== //
 // Variable declaration //
 // =========== //
-var varNamingUniqueStringThreeCharStorageRG = take('${uniqueString(workloadSubsId, storageObjectsRgName)}', 3)
+var varNamingUniqueStringThreeCharStorageRG = take('${uniqueString(subscriptionId, storageObjectsRgName)}', 3)
 var varVirtualMachineUserLoginRole = {
   id: 'fb879df8-f326-4884-b1cf-06f3ad86be52'
   name: 'Virtual Machine User Login'
