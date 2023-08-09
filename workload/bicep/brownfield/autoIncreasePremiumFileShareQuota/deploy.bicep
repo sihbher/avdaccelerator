@@ -209,6 +209,7 @@ var varStorageAccountName = split(fileShareResourceId, '/')[8]
 var varStorageAccountResourceGroupName = split(fileShareResourceId, '/')[4]
 var varStorageAccountSubscriptionId = split(fileShareResourceId, '/')[2]
 var varTimeZone = varLocations[varLocation].timeZone
+var varNamingUniqueStringThreeCharSharedServicesRG = take('${uniqueString(sharedServicesSubscriptionId, varResourceGroupName)}', 3)
 
 
 // =========== //
@@ -247,7 +248,7 @@ module workspaceWait '../../../../carml/1.3.0/Microsoft.Resources/deploymentScri
   scope: resourceGroup(sharedServicesSubscriptionId, varResourceGroupName)
   name: 'LA-Workspace-Wait-${time}'
   params: {
-      name: 'LA-Workspace-Wait-${time}'
+      name: 'LA-Workspace-Wait-${varNamingUniqueStringThreeCharSharedServicesRG}'
       location: deploymentLocation
       azPowerShellVersion: '8.3.0'
       cleanupPreference: 'Always'

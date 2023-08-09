@@ -553,7 +553,7 @@ var varTelemetryId = 'pid-b04f18f1-9100-4b92-8e41-71f0d73e3755-${deploymentLocat
 var varTimeZone = varLocations[varLocation].timeZone
 
 // Placeholder for future feature
-// var varUniqueStringSixChar = take('${uniqueString(sharedServicesSubId, time)}', 6)
+// var varUniqueStringSixChar = take('${uniqueString(sharedServicesSubId)}', 6)
 var varUserAssignedManagedIdentityName = customNaming ? userAssignedManagedIdentityCustomName : 'id-aib-${varNamingStandard}'
 var varVdotCustomizer = [
     {
@@ -578,6 +578,8 @@ var varVirtualNetworkJoinRole = useExistingVirtualNetwork ? [
     }
 ] : []
 var varVmSize = 'Standard_D4s_v3'
+
+var varNamingUniqueStringThreeCharSharedServicesRG = take('${uniqueString(sharedServicesSubId, varResourceGroupName)}', 3)
 
 // =========== //
 // Deployments //
@@ -777,7 +779,7 @@ module workspaceWait '../../carml/1.3.0/Microsoft.Resources/deploymentScripts/de
     scope: resourceGroup(sharedServicesSubId, varResourceGroupName)
     name: 'LA-Workspace-Wait-${time}'
     params: {
-        name: 'LA-Workspace-Wait-${time}'
+        name: 'LA-Workspace-Wait-${varNamingUniqueStringThreeCharSharedServicesRG}'
         location: deploymentLocation
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'
@@ -876,7 +878,7 @@ module modules '../../carml/1.3.0/Microsoft.Automation/automationAccounts/module
 // Commenting out for future feature release
 /* module storageAccount '../../carml/1.2.0/Microsoft.Storage/storageAccounts/deploy.bicep' = {
     scope: resourceGroup(sharedServicesSubId, varResourceGroupName)
-    name: 'Storage-Account-${time}'
+    name: 'Storage-Account-${varNamingUniqueStringThreeCharSharedServicesRG}'
     params: {
         name: varStorageAccountName
         location: deploymentLocation

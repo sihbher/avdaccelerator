@@ -98,6 +98,8 @@ var varManagedDisk = empty(diskEncryptionSetResourceId) ? {
     storageAccountType: osDiskType
 }
 
+var varNamingUniqueStringThreeCharServicesRG = take('${uniqueString(workloadSubsId, serviceObjectsRgName)}', 3)
+
 // =========== //
 // Deployments //
 // =========== //
@@ -188,7 +190,7 @@ module managementVmWait '../../../../../carml/1.3.0/Microsoft.Resources/deployme
     scope: resourceGroup('${workloadSubsId}', '${serviceObjectsRgName}')
     name: 'MGMT-VM-Wait-${time}'
     params: {
-        name: 'MGMT-VM-Wait-${time}'
+        name: 'MGMT-VM-Wait-${varNamingUniqueStringThreeCharServicesRG}'
         location: location
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'

@@ -61,6 +61,8 @@ var varCustomPolicyDefinitions = [
       libDefinition: json(loadTextContent('../../../policies/zeroTrust/policyDefinitions/policy-definition-es-vm-disk-zero-trust.json'))
     }
 ]
+var varNamingUniqueStringThreeCharServicesRG = take('${uniqueString(subscriptionId, serviceObjectsRgName)}', 3)
+
 // =========== //
 // Deployments //
 // =========== //
@@ -197,7 +199,7 @@ module ztManagedIdentityWait '../../../../carml/1.3.0/Microsoft.Resources/deploy
     scope: resourceGroup('${subscriptionId}', '${serviceObjectsRgName}')
     name: 'ZT-Mana-Ident-Wait-${time}'
     params: {
-        name: 'Managed-Idenity-Wait-${time}'
+        name: 'Managed-Identity-Wait-${varNamingUniqueStringThreeCharServicesRG}'
         location: location
         azPowerShellVersion: '8.3.0'
         cleanupPreference: 'Always'

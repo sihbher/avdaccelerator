@@ -46,6 +46,13 @@ param tags object
 param time string = utcNow()
 
 // =========== //
+// Variables   //
+// =========== //
+
+var varNamingUniqueStringThreeCharMonitoringRG = take('${uniqueString(subscriptionId, monitoringRgName)}', 3)
+
+
+// =========== //
 // Deployments //
 // =========== //
 
@@ -82,7 +89,7 @@ module alaWorkspaceWait '../../../../carml/1.3.0/Microsoft.Resources/deploymentS
   scope: resourceGroup('${subscriptionId}', '${monitoringRgName}')
   name: 'LA-Workspace-Wait-${time}'
   params: {
-      name: 'LA-Workspace-Wait-${time}'
+      name: 'LA-Workspace-Wait-${varNamingUniqueStringThreeCharMonitoringRG}'
       location: managementPlaneLocation
       azPowerShellVersion: '8.3.0'
       cleanupPreference: 'Always'

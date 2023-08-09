@@ -54,6 +54,7 @@ param time string = utcNow()
 // =========== //
 // Variable declaration //
 // =========== //
+var varNamingUniqueStringThreeCharStorageRG = take('${uniqueString(subscriptionId, storageObjectsRgName)}', 3)
 var varVirtualMachineUserLoginRole = {
   id: 'fb879df8-f326-4884-b1cf-06f3ad86be52'
   name: 'Virtual Machine User Login'
@@ -128,7 +129,7 @@ module managedIdentityWait '../../../../carml/1.3.0/Microsoft.Resources/deployme
   scope: resourceGroup('${subscriptionId}', '${storageObjectsRgName}')
   name: 'Managed-Identity-Wait-${time}'
   params: {
-      name: 'Managed-Identity-Wait-${time}'
+      name: 'Managed-Identity-Wait-${varNamingUniqueStringThreeCharStorageRG}'
       location: location
       azPowerShellVersion: '9.7'
       cleanupPreference: 'Always'
