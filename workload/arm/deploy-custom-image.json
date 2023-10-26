@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.21.1.54444",
-      "templateHash": "3143037409032084215"
+      "version": "0.22.6.54827",
+      "templateHash": "14859622657292371356"
     },
     "name": "AVD Accelerator - Baseline Custom Image Deployment",
     "description": "AVD Accelerator - Custom Image Baseline"
@@ -226,7 +226,7 @@
         "false"
       ],
       "metadata": {
-        "description": "The image supports accelerated networking.\r\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\r\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\r\nmost demanding network workloads on supported VM types.\r\n"
+        "description": "The image supports accelerated networking.\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\nmost demanding network workloads on supported VM types.\n"
       }
     },
     "imageDefinitionHibernateSupported": {
@@ -900,8 +900,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "16305048561599990873"
+              "version": "0.22.6.54827",
+              "templateHash": "17361628477275128936"
             }
           },
           "parameters": {
@@ -1009,8 +1009,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "6750369994052504038"
+                      "version": "0.22.6.54827",
+                      "templateHash": "13440790213022786182"
                     }
                   },
                   "parameters": {
@@ -1139,8 +1139,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "1146156557420886689"
+                      "version": "0.22.6.54827",
+                      "templateHash": "9238529270860750175"
                     }
                   },
                   "parameters": {
@@ -1508,8 +1508,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "7655074658008799048"
+              "version": "0.22.6.54827",
+              "templateHash": "12669185633699878671"
             }
           },
           "parameters": {
@@ -1671,8 +1671,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "7754983815852819350"
+              "version": "0.22.6.54827",
+              "templateHash": "2381078326693410282"
             }
           },
           "parameters": {
@@ -1794,8 +1794,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "5263933546195004806"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2246284698738978006"
                     }
                   },
                   "parameters": {
@@ -1993,8 +1993,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "17317977123822737513"
+              "version": "0.22.6.54827",
+              "templateHash": "13017049152529941295"
             }
           },
           "parameters": {
@@ -2576,8 +2576,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "17317977123822737513"
+              "version": "0.22.6.54827",
+              "templateHash": "13017049152529941295"
             }
           },
           "parameters": {
@@ -3158,8 +3158,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "2176013930368017643"
+              "version": "0.22.6.54827",
+              "templateHash": "10749384902120228092"
             }
           },
           "parameters": {
@@ -3309,8 +3309,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "11269548480306815930"
+                      "version": "0.22.6.54827",
+                      "templateHash": "11003211528077988320"
                     }
                   },
                   "parameters": {
@@ -3481,8 +3481,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "5744403987653914433"
+                      "version": "0.22.6.54827",
+                      "templateHash": "14002625267112330648"
                     }
                   },
                   "parameters": {
@@ -3646,8 +3646,8 @@
                           "metadata": {
                             "_generator": {
                               "name": "bicep",
-                              "version": "0.21.1.54444",
-                              "templateHash": "7298669307498418354"
+                              "version": "0.22.6.54827",
+                              "templateHash": "1458300543989173684"
                             }
                           },
                           "parameters": {
@@ -3852,8 +3852,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "6914196563169645116"
+                      "version": "0.22.6.54827",
+                      "templateHash": "7011758515066723349"
                     }
                   },
                   "parameters": {
@@ -3972,7 +3972,7 @@
                         "V2"
                       ],
                       "metadata": {
-                        "description": "Optional. The hypervisor generation of the Virtual Machine.\r\n* If this value is not specified, then it is determined by the securityType parameter.\r\n* If the securityType parameter is specified, then the value of hyperVGeneration will be V2, else V1.\r\n"
+                        "description": "Optional. The hypervisor generation of the Virtual Machine.\n* If this value is not specified, then it is determined by the securityType parameter.\n* If the securityType parameter is specified, then the value of hyperVGeneration will be V2, else V1.\n"
                       }
                     },
                     "securityType": {
@@ -4007,7 +4007,7 @@
                         "false"
                       ],
                       "metadata": {
-                        "description": "Optional. The image supports accelerated networking.\r\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\r\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\r\nmost demanding network workloads on supported VM types.\r\n"
+                        "description": "Optional. The image supports accelerated networking.\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\nmost demanding network workloads on supported VM types.\n"
                       }
                     },
                     "imageDefinitionDescription": {
@@ -4173,8 +4173,8 @@
                           "metadata": {
                             "_generator": {
                               "name": "bicep",
-                              "version": "0.21.1.54444",
-                              "templateHash": "5638838897264311157"
+                              "version": "0.22.6.54827",
+                              "templateHash": "3118437380212985760"
                             }
                           },
                           "parameters": {
@@ -4436,8 +4436,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "6914196563169645116"
+              "version": "0.22.6.54827",
+              "templateHash": "7011758515066723349"
             }
           },
           "parameters": {
@@ -4556,7 +4556,7 @@
                 "V2"
               ],
               "metadata": {
-                "description": "Optional. The hypervisor generation of the Virtual Machine.\r\n* If this value is not specified, then it is determined by the securityType parameter.\r\n* If the securityType parameter is specified, then the value of hyperVGeneration will be V2, else V1.\r\n"
+                "description": "Optional. The hypervisor generation of the Virtual Machine.\n* If this value is not specified, then it is determined by the securityType parameter.\n* If the securityType parameter is specified, then the value of hyperVGeneration will be V2, else V1.\n"
               }
             },
             "securityType": {
@@ -4591,7 +4591,7 @@
                 "false"
               ],
               "metadata": {
-                "description": "Optional. The image supports accelerated networking.\r\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\r\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\r\nmost demanding network workloads on supported VM types.\r\n"
+                "description": "Optional. The image supports accelerated networking.\nAccelerated networking enables single root I/O virtualization (SR-IOV) to a VM, greatly improving its networking performance.\nThis high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the\nmost demanding network workloads on supported VM types.\n"
               }
             },
             "imageDefinitionDescription": {
@@ -4757,8 +4757,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "5638838897264311157"
+                      "version": "0.22.6.54827",
+                      "templateHash": "3118437380212985760"
                     }
                   },
                   "parameters": {
@@ -4985,8 +4985,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "7969033002527129508"
+              "version": "0.22.6.54827",
+              "templateHash": "14008241598463079687"
             }
           },
           "parameters": {
@@ -5043,14 +5043,14 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. Resource ID of an already existing subnet, e.g.: /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vnetName>/subnets/<subnetName>.\r\nIf no value is provided, a new temporary VNET and subnet will be created in the staging resource group and will be deleted along with the remaining temporary resources.\r\n"
+                "description": "Optional. Resource ID of an already existing subnet, e.g.: /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Network/virtualNetworks/<vnetName>/subnets/<subnetName>.\nIf no value is provided, a new temporary VNET and subnet will be created in the staging resource group and will be deleted along with the remaining temporary resources.\n"
               }
             },
             "userAssignedIdentities": {
               "type": "array",
               "defaultValue": [],
               "metadata": {
-                "description": "Optional. List of User-Assigned Identities associated to the Build VM for accessing Azure resources such as Key Vaults from your customizer scripts.\r\nBe aware, the user assigned identity specified in the \\'userMsiName\\' parameter must have the \\'Managed Identity Operator\\' role assignment on all the user assigned identities\r\nspecified in this parameter for Azure Image Builder to be able to associate them to the build VM.\r\n"
+                "description": "Optional. List of User-Assigned Identities associated to the Build VM for accessing Azure resources such as Key Vaults from your customizer scripts.\nBe aware, the user assigned identity specified in the \\'userMsiName\\' parameter must have the \\'Managed Identity Operator\\' role assignment on all the user assigned identities\nspecified in this parameter for Azure Image Builder to be able to associate them to the build VM.\n"
               }
             },
             "imageSource": {
@@ -5122,7 +5122,7 @@
               "type": "string",
               "defaultValue": "",
               "metadata": {
-                "description": "Optional. Resource ID of the staging resource group in the same subscription and location as the image template that will be used to build the image.\r\nIf this field is empty, a resource group with a random name will be created.\r\nIf the resource group specified in this field doesn\\'t exist, it will be created with the same name.\r\nIf the resource group specified exists, it must be empty and in the same region as the image template.\r\nThe resource group created will be deleted during template deletion if this field is empty or the resource group specified doesn\\'t exist,\r\nbut if the resource group specified exists the resources created in the resource group will be deleted during template deletion and the resource group itself will remain.\r\n"
+                "description": "Optional. Resource ID of the staging resource group in the same subscription and location as the image template that will be used to build the image.\nIf this field is empty, a resource group with a random name will be created.\nIf the resource group specified in this field doesn\\'t exist, it will be created with the same name.\nIf the resource group specified exists, it must be empty and in the same region as the image template.\nThe resource group created will be deleted during template deletion if this field is empty or the resource group specified doesn\\'t exist,\nbut if the resource group specified exists the resources created in the resource group will be deleted during template deletion and the resource group itself will remain.\n"
               }
             },
             "lock": {
@@ -5315,8 +5315,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "675387888330318413"
+                      "version": "0.22.6.54827",
+                      "templateHash": "14467994353590988540"
                     }
                   },
                   "parameters": {
@@ -5517,8 +5517,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "1156178304169403377"
+              "version": "0.22.6.54827",
+              "templateHash": "5884964317899731757"
             }
           },
           "parameters": {
@@ -5911,8 +5911,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "13379431903908500265"
+                      "version": "0.22.6.54827",
+                      "templateHash": "5823189975825195644"
                     }
                   },
                   "parameters": {
@@ -6055,8 +6055,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "18035599797024630806"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2835282253503364672"
                     }
                   },
                   "parameters": {
@@ -6189,8 +6189,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15194527127560537713"
+                      "version": "0.22.6.54827",
+                      "templateHash": "510602858956892391"
                     }
                   },
                   "parameters": {
@@ -6324,8 +6324,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "14867461711977977980"
+                      "version": "0.22.6.54827",
+                      "templateHash": "12317136568586717646"
                     }
                   },
                   "parameters": {
@@ -6496,8 +6496,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "1856549003153181310"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2075385566420563356"
                     }
                   },
                   "parameters": {
@@ -6643,8 +6643,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "3069063252346343891"
+                      "version": "0.22.6.54827",
+                      "templateHash": "5429413815939256006"
                     }
                   },
                   "parameters": {
@@ -6870,8 +6870,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15607599815412583880"
+                      "version": "0.22.6.54827",
+                      "templateHash": "6306155217615029334"
                     }
                   },
                   "parameters": {
@@ -7039,8 +7039,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15387093705469323985"
+                      "version": "0.22.6.54827",
+                      "templateHash": "49173190120024970"
                     }
                   },
                   "parameters": {
@@ -7190,8 +7190,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "3735355062180278453"
+                      "version": "0.22.6.54827",
+                      "templateHash": "17191832464911210338"
                     }
                   },
                   "parameters": {
@@ -7364,317 +7364,6 @@
       ]
     },
     {
-      "condition": "[and(parameters('enableMonitoringAlerts'), empty(parameters('existingLogAnalyticsWorkspaceResourceId')))]",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[format('LA-Workspace-Wait-{0}', parameters('time'))]",
-      "subscriptionId": "[parameters('sharedServicesSubId')]",
-      "resourceGroup": "[variables('varResourceGroupName')]",
-      "properties": {
-        "expressionEvaluationOptions": {
-          "scope": "inner"
-        },
-        "mode": "Incremental",
-        "parameters": {
-          "name": {
-            "value": "[format('LA-Workspace-Wait-{0}', parameters('time'))]"
-          },
-          "location": {
-            "value": "[parameters('deploymentLocation')]"
-          },
-          "azPowerShellVersion": {
-            "value": "8.3.0"
-          },
-          "cleanupPreference": {
-            "value": "Always"
-          },
-          "timeout": {
-            "value": "PT10M"
-          },
-          "retentionInterval": {
-            "value": "PT1H"
-          },
-          "scriptContent": {
-            "value": "        Write-Host \"Start\"\r\n        Get-Date\r\n        Start-Sleep -Seconds 60\r\n        Write-Host \"Stop\"\r\n        Get-Date\r\n        "
-          }
-        },
-        "template": {
-          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "metadata": {
-            "_generator": {
-              "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "8145106657487286483"
-            }
-          },
-          "parameters": {
-            "name": {
-              "type": "string",
-              "metadata": {
-                "description": "Required. Display name of the script to be run."
-              }
-            },
-            "userAssignedIdentities": {
-              "type": "object",
-              "defaultValue": {},
-              "metadata": {
-                "description": "Optional. The ID(s) to assign to the resource."
-              }
-            },
-            "location": {
-              "type": "string",
-              "defaultValue": "[resourceGroup().location]",
-              "metadata": {
-                "description": "Optional. Location for all resources."
-              }
-            },
-            "kind": {
-              "type": "string",
-              "defaultValue": "AzurePowerShell",
-              "allowedValues": [
-                "AzurePowerShell",
-                "AzureCLI"
-              ],
-              "metadata": {
-                "description": "Optional. Type of the script. AzurePowerShell, AzureCLI."
-              }
-            },
-            "azPowerShellVersion": {
-              "type": "string",
-              "defaultValue": "3.0",
-              "metadata": {
-                "description": "Optional. Azure PowerShell module version to be used."
-              }
-            },
-            "azCliVersion": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. Azure CLI module version to be used."
-              }
-            },
-            "scriptContent": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. Script body. Max length: 32000 characters. To run an external script, use primaryScriptURI instead."
-              }
-            },
-            "primaryScriptUri": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. Uri for the external script. This is the entry point for the external script. To run an internal script, use the scriptContent instead."
-              }
-            },
-            "environmentVariables": {
-              "type": "secureObject",
-              "defaultValue": {},
-              "metadata": {
-                "description": "Optional. The environment variables to pass over to the script. The list is passed as an object with a key name \"secureList\" and the value is the list of environment variables (array). The list must have a 'name' and a 'value' or a 'secretValue' property for each object."
-              }
-            },
-            "supportingScriptUris": {
-              "type": "array",
-              "defaultValue": [],
-              "metadata": {
-                "description": "Optional. List of supporting files for the external script (defined in primaryScriptUri). Does not work with internal scripts (code defined in scriptContent)."
-              }
-            },
-            "arguments": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. Command-line arguments to pass to the script. Arguments are separated by spaces."
-              }
-            },
-            "retentionInterval": {
-              "type": "string",
-              "defaultValue": "P1D",
-              "metadata": {
-                "description": "Optional. Interval for which the service retains the script resource after it reaches a terminal state. Resource will be deleted when this duration expires. Duration is based on ISO 8601 pattern (for example P7D means one week)."
-              }
-            },
-            "runOnce": {
-              "type": "bool",
-              "defaultValue": false,
-              "metadata": {
-                "description": "Optional. When set to false, script will run every time the template is deployed. When set to true, the script will only run once."
-              }
-            },
-            "cleanupPreference": {
-              "type": "string",
-              "defaultValue": "Always",
-              "allowedValues": [
-                "Always",
-                "OnSuccess",
-                "OnExpiration"
-              ],
-              "metadata": {
-                "description": "Optional. The clean up preference when the script execution gets in a terminal state. Specify the preference on when to delete the deployment script resources. The default value is Always, which means the deployment script resources are deleted despite the terminal state (Succeeded, Failed, canceled)."
-              }
-            },
-            "containerGroupName": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. Container group name, if not specified then the name will get auto-generated. Not specifying a 'containerGroupName' indicates the system to generate a unique name which might end up flagging an Azure Policy as non-compliant. Use 'containerGroupName' when you have an Azure Policy that expects a specific naming convention or when you want to fully control the name. 'containerGroupName' property must be between 1 and 63 characters long, must contain only lowercase letters, numbers, and dashes and it cannot start or end with a dash and consecutive dashes are not allowed."
-              }
-            },
-            "storageAccountResourceId": {
-              "type": "string",
-              "defaultValue": "",
-              "metadata": {
-                "description": "Optional. The resource ID of the storage account to use for this deployment script. If none is provided, the deployment script uses a temporary, managed storage account."
-              }
-            },
-            "timeout": {
-              "type": "string",
-              "defaultValue": "PT1H",
-              "metadata": {
-                "description": "Optional. Maximum allowed script execution time specified in ISO 8601 format. Default value is PT1H - 1 hour; 'PT30M' - 30 minutes; 'P5D' - 5 days; 'P1Y' 1 year."
-              }
-            },
-            "baseTime": {
-              "type": "string",
-              "defaultValue": "[utcNow('yyyy-MM-dd-HH-mm-ss')]",
-              "metadata": {
-                "description": "Generated. Do not provide a value! This date value is used to make sure the script run every time the template is deployed."
-              }
-            },
-            "lock": {
-              "type": "string",
-              "defaultValue": "",
-              "allowedValues": [
-                "",
-                "CanNotDelete",
-                "ReadOnly"
-              ],
-              "metadata": {
-                "description": "Optional. Specify the type of lock."
-              }
-            },
-            "tags": {
-              "type": "object",
-              "defaultValue": {},
-              "metadata": {
-                "description": "Optional. Tags of the resource."
-              }
-            },
-            "enableDefaultTelemetry": {
-              "type": "bool",
-              "defaultValue": true,
-              "metadata": {
-                "description": "Optional. Enable telemetry via a Globally Unique Identifier (GUID)."
-              }
-            }
-          },
-          "variables": {
-            "containerSettings": {
-              "containerGroupName": "[parameters('containerGroupName')]"
-            },
-            "identityType": "[if(not(empty(parameters('userAssignedIdentities'))), 'UserAssigned', 'None')]",
-            "identity": "[if(not(equals(variables('identityType'), 'None')), createObject('type', variables('identityType'), 'userAssignedIdentities', if(not(empty(parameters('userAssignedIdentities'))), parameters('userAssignedIdentities'), null())), null())]"
-          },
-          "resources": [
-            {
-              "condition": "[parameters('enableDefaultTelemetry')]",
-              "type": "Microsoft.Resources/deployments",
-              "apiVersion": "2021-04-01",
-              "name": "[format('pid-47ed15a6-730a-4827-bcb4-0fd963ffbd82-{0}', uniqueString(deployment().name, parameters('location')))]",
-              "properties": {
-                "mode": "Incremental",
-                "template": {
-                  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-                  "contentVersion": "1.0.0.0",
-                  "resources": []
-                }
-              }
-            },
-            {
-              "type": "Microsoft.Resources/deploymentScripts",
-              "apiVersion": "2020-10-01",
-              "name": "[parameters('name')]",
-              "location": "[parameters('location')]",
-              "tags": "[parameters('tags')]",
-              "identity": "[variables('identity')]",
-              "kind": "[parameters('kind')]",
-              "properties": {
-                "azPowerShellVersion": "[if(equals(parameters('kind'), 'AzurePowerShell'), parameters('azPowerShellVersion'), null())]",
-                "azCliVersion": "[if(equals(parameters('kind'), 'AzureCLI'), parameters('azCliVersion'), null())]",
-                "containerSettings": "[if(not(empty(parameters('containerGroupName'))), variables('containerSettings'), null())]",
-                "storageAccountSettings": "[if(not(empty(parameters('storageAccountResourceId'))), if(not(empty(parameters('storageAccountResourceId'))), createObject('storageAccountKey', listKeys(parameters('storageAccountResourceId'), '2019-06-01').keys[0].value, 'storageAccountName', last(split(parameters('storageAccountResourceId'), '/'))), createObject()), null())]",
-                "arguments": "[parameters('arguments')]",
-                "environmentVariables": "[if(not(empty(parameters('environmentVariables'))), parameters('environmentVariables').secureList, createArray())]",
-                "scriptContent": "[if(not(empty(parameters('scriptContent'))), parameters('scriptContent'), null())]",
-                "primaryScriptUri": "[if(not(empty(parameters('primaryScriptUri'))), parameters('primaryScriptUri'), null())]",
-                "supportingScriptUris": "[if(not(empty(parameters('supportingScriptUris'))), parameters('supportingScriptUris'), null())]",
-                "cleanupPreference": "[parameters('cleanupPreference')]",
-                "forceUpdateTag": "[if(parameters('runOnce'), resourceGroup().name, parameters('baseTime'))]",
-                "retentionInterval": "[parameters('retentionInterval')]",
-                "timeout": "[parameters('timeout')]"
-              }
-            },
-            {
-              "condition": "[not(empty(parameters('lock')))]",
-              "type": "Microsoft.Authorization/locks",
-              "apiVersion": "2020-05-01",
-              "scope": "[format('Microsoft.Resources/deploymentScripts/{0}', parameters('name'))]",
-              "name": "[format('{0}-{1}-lock', parameters('name'), parameters('lock'))]",
-              "properties": {
-                "level": "[parameters('lock')]",
-                "notes": "[if(equals(parameters('lock'), 'CanNotDelete'), 'Cannot delete resource or child resources.', 'Cannot modify the resource or child resources.')]"
-              },
-              "dependsOn": [
-                "[resourceId('Microsoft.Resources/deploymentScripts', parameters('name'))]"
-              ]
-            }
-          ],
-          "outputs": {
-            "resourceId": {
-              "type": "string",
-              "metadata": {
-                "description": "The resource ID of the deployment script."
-              },
-              "value": "[resourceId('Microsoft.Resources/deploymentScripts', parameters('name'))]"
-            },
-            "resourceGroupName": {
-              "type": "string",
-              "metadata": {
-                "description": "The resource group the deployment script was deployed into."
-              },
-              "value": "[resourceGroup().name]"
-            },
-            "name": {
-              "type": "string",
-              "metadata": {
-                "description": "The name of the deployment script."
-              },
-              "value": "[parameters('name')]"
-            },
-            "location": {
-              "type": "string",
-              "metadata": {
-                "description": "The location the resource was deployed into."
-              },
-              "value": "[reference(resourceId('Microsoft.Resources/deploymentScripts', parameters('name')), '2020-10-01', 'full').location]"
-            },
-            "outputs": {
-              "type": "object",
-              "metadata": {
-                "description": "The output of the deployment script."
-              },
-              "value": "[if(contains(reference(resourceId('Microsoft.Resources/deploymentScripts', parameters('name')), '2020-10-01'), 'outputs'), reference(resourceId('Microsoft.Resources/deploymentScripts', parameters('name')), '2020-10-01').outputs, createObject())]"
-            }
-          }
-        }
-      },
-      "dependsOn": [
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Log-Analytics-Workspace-{0}', parameters('time')))]"
-      ]
-    },
-    {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[format('Automation-Account-{0}', parameters('time'))]",
@@ -7764,8 +7453,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "3330372472596925837"
+              "version": "0.22.6.54827",
+              "templateHash": "1009754860120323200"
             }
           },
           "parameters": {
@@ -8152,8 +7841,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "17170735581525169641"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2811582222842505534"
                     }
                   },
                   "parameters": {
@@ -8306,8 +7995,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "5479295006707878833"
+                      "version": "0.22.6.54827",
+                      "templateHash": "6170727032943915435"
                     }
                   },
                   "parameters": {
@@ -8499,8 +8188,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "17442703444396836746"
+                      "version": "0.22.6.54827",
+                      "templateHash": "12700805041710366808"
                     }
                   },
                   "parameters": {
@@ -8701,8 +8390,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "16872455273402734811"
+                      "version": "0.22.6.54827",
+                      "templateHash": "4209026557013170627"
                     }
                   },
                   "parameters": {
@@ -8850,8 +8539,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15739346377207105668"
+                      "version": "0.22.6.54827",
+                      "templateHash": "17367525164500524990"
                     }
                   },
                   "parameters": {
@@ -8985,8 +8674,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "18035599797024630806"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2835282253503364672"
                     }
                   },
                   "parameters": {
@@ -9124,8 +8813,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15387093705469323985"
+                      "version": "0.22.6.54827",
+                      "templateHash": "49173190120024970"
                     }
                   },
                   "parameters": {
@@ -9307,8 +8996,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "5587147182178326997"
+                      "version": "0.22.6.54827",
+                      "templateHash": "7206559927484048"
                     }
                   },
                   "parameters": {
@@ -9778,8 +9467,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "14559775667395480629"
+                      "version": "0.22.6.54827",
+                      "templateHash": "2085185199961745321"
                     }
                   },
                   "parameters": {
@@ -9975,8 +9664,8 @@
                           "metadata": {
                             "_generator": {
                               "name": "bicep",
-                              "version": "0.21.1.54444",
-                              "templateHash": "10817246518679375966"
+                              "version": "0.22.6.54827",
+                              "templateHash": "16499505989196107224"
                             }
                           },
                           "parameters": {
@@ -10110,8 +9799,8 @@
                           "metadata": {
                             "_generator": {
                               "name": "bicep",
-                              "version": "0.21.1.54444",
-                              "templateHash": "13032708393704093995"
+                              "version": "0.22.6.54827",
+                              "templateHash": "14351187799927334028"
                             }
                           },
                           "parameters": {
@@ -10324,8 +10013,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "10676519467876912979"
+                      "version": "0.22.6.54827",
+                      "templateHash": "10195514445399502357"
                     }
                   },
                   "parameters": {
@@ -10485,8 +10174,7 @@
       "dependsOn": [
         "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Image-Template-{0}', parameters('time')))]",
         "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('User-Assigned-Managed-Identity-{0}', parameters('time')))]",
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Log-Analytics-Workspace-{0}', parameters('time')))]",
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('LA-Workspace-Wait-{0}', parameters('time')))]"
+        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Log-Analytics-Workspace-{0}', parameters('time')))]"
       ]
     },
     {
@@ -10529,8 +10217,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "17170735581525169641"
+              "version": "0.22.6.54827",
+              "templateHash": "2811582222842505534"
             }
           },
           "parameters": {
@@ -10688,8 +10376,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "6773203042735005838"
+              "version": "0.22.6.54827",
+              "templateHash": "10329032680130671651"
             }
           },
           "parameters": {
@@ -10881,8 +10569,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "2628891413283540922"
+                      "version": "0.22.6.54827",
+                      "templateHash": "3593800460322974765"
                     }
                   },
                   "parameters": {
@@ -11228,8 +10916,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.21.1.54444",
-              "templateHash": "3364210327753707174"
+              "version": "0.22.6.54827",
+              "templateHash": "1147365677902481896"
             }
           },
           "parameters": {
@@ -11451,8 +11139,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.21.1.54444",
-                      "templateHash": "15352642791797157407"
+                      "version": "0.22.6.54827",
+                      "templateHash": "10545808551952818846"
                     }
                   },
                   "parameters": {
@@ -11730,8 +11418,7 @@
       },
       "dependsOn": [
         "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Action-Group-{0}', parameters('time')))]",
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Log-Analytics-Workspace-{0}', parameters('time')))]",
-        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('LA-Workspace-Wait-{0}', parameters('time')))]"
+        "[extensionResourceId(format('/subscriptions/{0}/resourceGroups/{1}', parameters('sharedServicesSubId'), variables('varResourceGroupName')), 'Microsoft.Resources/deployments', format('Log-Analytics-Workspace-{0}', parameters('time')))]"
       ]
     }
   ]

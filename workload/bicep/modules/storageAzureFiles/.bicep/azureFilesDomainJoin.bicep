@@ -24,7 +24,7 @@ param domainJoinUserPassword string
 // Variable declaration //
 // =========== //
 
-var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword ${domainJoinUserPassword} -verbose'
+var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword \'${domainJoinUserPassword}\' -verbose'
 
 // =========== //
 // Deployments //
