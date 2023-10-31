@@ -536,7 +536,7 @@ var varZtKvName = avdUseCustomNaming ? '${ztKvPrefixCustomName}-${varComputeStor
 var varZtKvPrivateEndpointName = 'pe-${varZtKvName}-vault'
 //
 var varFslogixSharePath = '\\\\${varFslogixStorageName}.file.${environment().suffixes.storage}\\${varFslogixFileShareName}'
-var varBaseScriptUri = 'https://raw.githubusercontent.com/Azure/avdaccelerator/main/workload/'
+var varBaseScriptUri = 'https://raw.githubusercontent.com/Azure/avdaccelerator/complex-adjoin-pw/workload/'
 var varSessionHostConfigurationScriptFileName = 'Set-SessionHostConfiguration.ps1'
 var varSessionHostConfigurationScriptUri = '${varBaseScriptUri}scripts/${varSessionHostConfigurationScriptFileName}'
 var varSessionHostConfigurationScript = './${varSessionHostConfigurationScriptFileName}'
@@ -914,6 +914,7 @@ module networking './modules/networking/deploy.bicep' = if (createAvdVnet || cre
         vnetPeeringName: varVnetPeeringName
         remoteVnetPeeringName: varRemoteVnetPeeringName
         vnetAvdSubnetName: varVnetAvdSubnetName
+        existingPeSubnetResourceId: existingVnetPrivateEndpointSubnetResourceId
         vnetPrivateEndpointSubnetName: varVnetPrivateEndpointSubnetName
         createVnetPeering: varCreateVnetPeering
         deployPrivateEndpointSubnet: (deployPrivateEndpointKeyvaultStorage == true) ? true : false //adding logic that will be used when also including AVD control plane PEs
