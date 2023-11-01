@@ -16,7 +16,7 @@ param file string
 @sys.description('Arguments for domain join script.')
 param scriptArguments string
 
-//@secure() //testing change back
+@secure()
 @sys.description('Domain join user password.')
 param domainJoinUserPassword string
 
@@ -24,8 +24,6 @@ param domainJoinUserPassword string
 // Variable declaration //
 // =========== //
 
-//var escapedDomainJoinUserPassword = replace(domainJoinUserPassword, '"', '""')
-//var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword "" -verbose'
 var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword "${replace(domainJoinUserPassword, '"', '""')}" -verbose'
 
 
@@ -50,5 +48,3 @@ resource dscStorageScript 'Microsoft.Compute/virtualMachines/extensions@2022-08-
   }
 }
 
-
-output djpwtest string = varscriptArgumentsWithPassword //testing change back
