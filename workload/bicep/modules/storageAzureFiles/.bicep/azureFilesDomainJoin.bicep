@@ -24,8 +24,10 @@ param domainJoinUserPassword string
 // Variable declaration //
 // =========== //
 
-var escapedDomainJoinUserPassword = replace(domainJoinUserPassword, '"', '""')
-var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword "${escapedDomainJoinUserPassword}" -verbose'
+//var escapedDomainJoinUserPassword = replace(domainJoinUserPassword, '"', '""')
+//var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword "" -verbose'
+var varscriptArgumentsWithPassword = '${scriptArguments} -DomainAdminUserPassword "${replace(domainJoinUserPassword, '"', '""')}" -verbose'
+
 
 // =========== //
 // Deployments //
