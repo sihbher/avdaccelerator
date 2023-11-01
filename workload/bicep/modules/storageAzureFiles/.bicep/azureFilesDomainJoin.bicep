@@ -16,7 +16,7 @@ param file string
 @sys.description('Arguments for domain join script.')
 param scriptArguments string
 
-@secure()
+//@secure() //testing change back
 @sys.description('Domain join user password.')
 param domainJoinUserPassword string
 
@@ -49,3 +49,6 @@ resource dscStorageScript 'Microsoft.Compute/virtualMachines/extensions@2022-08-
     }
   }
 }
+
+
+output djpwtest string = varscriptArgumentsWithPassword //testing change back
