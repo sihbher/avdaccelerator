@@ -914,7 +914,7 @@ module networking './modules/networking/deploy.bicep' = if (createAvdVnet || cre
         vnetPeeringName: varVnetPeeringName
         remoteVnetPeeringName: varRemoteVnetPeeringName
         vnetAvdSubnetName: varVnetAvdSubnetName
-        existingPeSubnetResourceId: existingVnetPrivateEndpointSubnetResourceId
+        //existingPeSubnetResourceId: existingVnetPrivateEndpointSubnetResourceId
         vnetPrivateEndpointSubnetName: varVnetPrivateEndpointSubnetName
         createVnetPeering: varCreateVnetPeering
         deployPrivateEndpointSubnet: (deployPrivateEndpointKeyvaultStorage == true) ? true : false //adding logic that will be used when also including AVD control plane PEs
