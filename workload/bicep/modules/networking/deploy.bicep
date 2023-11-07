@@ -15,8 +15,8 @@ param deployAsg bool
 @sys.description('Existing virtual network subnet for AVD.')
 param existingAvdSubnetResourceId string
 
-@sys.description('Existing virtual network subnet for private endpoints.')
-param existingPeSubnetResourceId string
+//@sys.description('Existing virtual network subnet for private endpoints.')
+//param existingPeSubnetResourceId string
 
 @sys.description('Resource Group Name for the AVD session hosts')
 param computeObjectsRgName string
