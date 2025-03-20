@@ -210,3 +210,9 @@ variable "fw_policy" {
 variable "hub_dns_zone_rg" {
   description = "The resource group for the hub DNS zone"
 }
+
+variable "enable_nic_diagnostics" {
+  description = "Enable or disable diagnostic settings for network interfaces"
+  type        = bool
+  default     = true
+}

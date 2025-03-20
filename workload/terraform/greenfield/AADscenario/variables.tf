@@ -271,3 +271,9 @@ For more information see https://aka.ms/avm/telemetry.
 If it is set to false, then no telemetry will be collected.
 DESCRIPTION
 }
+
+variable "enable_nic_diagnostics" {
+  description = "Enable or disable diagnostic settings for network interfaces"
+  type        = bool
+  default     = true
+}

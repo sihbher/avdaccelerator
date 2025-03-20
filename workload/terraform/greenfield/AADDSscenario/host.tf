@@ -29,6 +29,25 @@ resource "azurerm_network_interface" "avd_vm_nic" {
   ]
 }
 
+# Configure diagnostic settings for network interfaces
+resource "azurerm_monitor_diagnostic_setting" "nic_diag" {
+  count                      = var.enable_nic_diagnostics ? var.rdsh_count : 0
+  name                       = "diag-nic-${var.prefix}-${count.index + 1}"
+  target_resource_id         = azurerm_network_interface.avd_vm_nic[count.index].id
+  log_analytics_workspace_id = data.azurerm_log_analytics_workspace.lawksp.id
+
+  # NIC specific metrics
+  metric {
+    category = "AllMetrics"
+    enabled  = true
+  }
+
+  lifecycle {
+    ignore_changes = [log, metric]
+  }
+}
+
+
 resource "azurerm_windows_virtual_machine" "avd_vm" {
   count                      = var.rdsh_count
   name                       = "avd-vm-${var.prefix}-${count.index + 1}"
