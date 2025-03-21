@@ -42,6 +42,21 @@ sku       = "win10-22h2-avd-g2"
 # gallery_name              = "avdgallery"                           # azure compute gallery name for custom image
 # image_name                = "avdImage-win11-23h2-avd-m365"         # custom image name
 
+
+## Optional - If you want to configure NIC diagnostic settings and VNet Logging:
+#enable_nic_diagnostics = true #By default is true
+
+#flow_logs_config = {
+#  retention_days              = 30
+#  traffic_analytics_enabled   = true
+#  traffic_analytics_interval  = 10
+#  network_watcher_name        = "" # Leave empty to use default naming convention
+#  network_watcher_rg_name     = "NetworkWatcherRG"
+#  storage_account_tier        = "Standard"
+#  storage_account_replication = "LRS"
+#}
+
+
 ############## Do not modify below this line unless you want to change naming convention#####################
 # Resource Groups
 rg_shared_name = "shared-resources" #output rg-avd-<Azure Region>-<prefix>-shared-resources
