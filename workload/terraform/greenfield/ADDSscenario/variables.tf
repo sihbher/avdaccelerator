@@ -290,17 +290,28 @@ variable "enable_nic_diagnostics" {
 
 
 variable "flow_logs_config" {
-  description = "Configuration for the Network Flow Logs. Set to null to disable flow logs."
+
   type = object({
-    retention_days              = number
-    traffic_analytics_enabled   = bool
-    traffic_analytics_interval  = number
-    network_watcher_name        = string
-    network_watcher_rg_name     = string
-    storage_account_tier        = string
-    storage_account_replication = string
+    retention_days              = number # How many days to retain flow logs
+    traffic_analytics_enabled   = bool   # Enable or disable Network Traffic Analytics
+    traffic_analytics_interval  = number # Interval in minutes to process analytics
+    network_watcher_name        = string # Name of the Network Watcher instance
+    network_watcher_rg_name     = string # Resource group containing the Network Watcher
+    storage_account_tier        = string # Performance tier for storage account
+    storage_account_replication = string # Data redundancy option for storage account
   })
   default = null
+
+  description = <<DESCRIPTION
+Configuration for the Network Flow Logs. Set to null to disable flow logs. This includes the following properties:
+- `retention_days` - The number of days to retain flow log data. Must be between 1 and 365 days.
+- `traffic_analytics_enabled` - Whether to enable Traffic Analytics for advanced processing of flow log data.
+- `traffic_analytics_interval` - The interval in minutes at which Traffic Analytics processes flow log data. Must be either 10 or 60 minutes.
+- `network_watcher_name` - The name of the Network Watcher resource that will manage the flow logs.
+- `network_watcher_rg_name` - The resource group containing the Network Watcher resource.
+- `storage_account_tier` - The performance tier for the storage account used to store flow logs. Must be either "Standard" or "Premium".
+- `storage_account_replication` - The type of replication to use for the storage account. Must be one of: "LRS", "GRS", "RAGRS", "ZRS", "GZRS", "RAGZRS".
+DESCRIPTION
 
   validation {
     condition     = var.flow_logs_config == null ? true : var.flow_logs_config.retention_days >= 1 && var.flow_logs_config.retention_days <= 365

@@ -1,72 +1,102 @@
+# ----------------------------------------
+# Network Flow Logs Configuration
+# ----------------------------------------
+
+# Determine if flow logs are enabled based on whether configuration was provided
 locals {
-  # Flow logs are enabled when the config is provided
+  # Flow logs are enabled when the config is provided and not null
   enable_flow_logs = var.flow_logs_config != null
 }
 
-# Get Network Watcher for the region
+# ----------------------------------------
+# Network Watcher Data Source
+# ----------------------------------------
+# Retrieve the Network Watcher instance for the region where flow logs will be created
+# This assumes a Network Watcher exists in the specified resource group or in the default
+# Azure-created "NetworkWatcher_[region]" format
 data "azurerm_network_watcher" "network_watcher" {
   count               = local.enable_flow_logs ? 1 : 0
+  
+  # Use provided Network Watcher name or fallback to standard naming convention
   name                = var.flow_logs_config.network_watcher_name != "" ? var.flow_logs_config.network_watcher_name : "NetworkWatcher_${lower(var.avdLocation)}"
   resource_group_name = var.flow_logs_config.network_watcher_rg_name
 }
 
-# Storage account for flow logs
+# ----------------------------------------
+# Storage Account for Flow Logs
+# ----------------------------------------
+# Create a dedicated storage account to store the flow logs data
+# This account uses the configuration specified in flow_logs_config
 resource "azurerm_storage_account" "flow_logs_storage" {
   count                    = local.enable_flow_logs ? 1 : 0
+  
+  # Generate a unique storage account name using the prefix and a random string
   name                     = "stavdflowlogs${var.prefix}${random_string.random.id}"
   resource_group_name      = module.network.rg_name
   location                 = var.avdLocation
+  
+  # Use the tier and replication settings from the configuration
   account_tier             = var.flow_logs_config.storage_account_tier
   account_replication_type = var.flow_logs_config.storage_account_replication
+  
+  # Enforce minimum TLS version for security
   min_tls_version          = "TLS1_2"
+  
+  # Apply the same tags used across the module
   tags                     = local.tags
 }
 
+# ----------------------------------------
+# Network Watcher Flow Log Resource
+# ----------------------------------------
+# Create the actual Network Watcher Flow Log resource using the Azure API
+# This is implemented using azapi_resource because some advanced configurations
+# might not be available in the native Terraform azurerm provider
+resource "azapi_resource" "network_watcher_flow_log" {
+  count     = local.enable_flow_logs ? 1 : 0
+  
+  # Resource type and API version
+  type      = "Microsoft.Network/networkWatchers/flowLogs@2023-11-01"
+  
+  # Generate flow log name based on the virtual network name
+  name      = "flowlog-${basename(var.vnet)}"
+  
+  # Link to the parent Network Watcher resource
+  parent_id = data.azurerm_network_watcher.network_watcher[0].id
 
+  # Set location and tags
+  location = var.avdLocation
+  tags     = local.tags
 
-# Use the AVM Network Watcher module with version 0.3.0
-# There is no way to support version 0.3.0 right now, there ae conflicts with the azurerm_network_watcher module
-module "network_watcher" {
-  source  = "Azure/avm-res-network-networkwatcher/azurerm"
-  version = "0.3.0"
-
-  # Only create when flow logs are enabled
-  count = local.enable_flow_logs ? 1 : 0
-
-  # Details of existing Network Watcher
-  location                = var.avdLocation
-  network_watcher_id      = data.azurerm_network_watcher.network_watcher[0].id
-  netnetwork_watcher_name = data.azurerm_network_watcher.network_watcher[0].name
-  resource_group_name     = data.azurerm_network_watcher.network_watcher[0].resource_group_name
-
-  # Optional parameters
-  enable_telemetry = var.enable_telemetry
-  tags             = local.tags
-
-  # VNet Flow log configuration
-  vnet_flow_logs = {
-    "vnet_flow_logs" = {
-      network_security_group_id = azurerm_network_security_group.res-0.id # Required for flow logs
-      virtual_network_id        = var.flow_logs_config.vnet_id != "" ? var.flow_logs_config.vnet_id : azurerm_virtual_network.res-0.id
-      storage_account_id        = azurerm_storage_account.flow_logs_storage[0].id
-      enabled                   = true
-      version                   = 2
-
-      retention_policy = {
-        enabled = true
+  # Configure the flow log properties
+  body = jsonencode({
+    properties = {
+      # Target the Virtual Network for flow logging
+      targetResourceId = module.network.vnet_id
+      
+      # Reference the storage account created for the flow logs
+      storageId        = azurerm_storage_account.flow_logs_storage[0].id
+      
+      enabled          = true
+      retentionPolicy = {
         days    = var.flow_logs_config.retention_days
+        enabled = true
       }
-
-      traffic_analytics = {
-        enabled               = var.flow_logs_config.traffic_analytics_enabled
-        interval_in_minutes   = var.flow_logs_config.traffic_analytics_interval
-        workspace_id          = module.avm_res_operationalinsights_workspace.resource.workspace_id
-        workspace_region      = var.avdLocation
-        workspace_resource_id = module.avm_res_operationalinsights_workspace.resource.id
+      format = {
+        type    = "JSON"
+        version = 2
       }
+      
+      # Conditionally configure Traffic Analytics if enabled
+      flowAnalyticsConfiguration = var.flow_logs_config.traffic_analytics_enabled ? {
+        networkWatcherFlowAnalyticsConfiguration = {
+          enabled                  = true
+          workspaceId              = module.avm_res_operationalinsights_workspace.resource.workspace_id
+          workspaceRegion          = var.avdLocation
+          workspaceResourceId      = module.avm_res_operationalinsights_workspace.resource.id
+          trafficAnalyticsInterval = var.flow_logs_config.traffic_analytics_interval
+        }
+      } : null
     }
-  }
-
-  # Empty flow_logs as we're using vnet_flow_logs instead
-  flow_logs = {}
+  })
 }
