@@ -290,7 +290,6 @@ variable "enable_nic_diagnostics" {
 
 
 variable "flow_logs_config" {
-
   type = object({
     retention_days              = number # How many days to retain flow logs
     traffic_analytics_enabled   = bool   # Enable or disable Network Traffic Analytics
