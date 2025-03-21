@@ -287,3 +287,38 @@ variable "enable_nic_diagnostics" {
   type        = bool
   default     = true
 }
+
+
+variable "flow_logs_config" {
+  description = "Configuration for the Network Flow Logs. Set to null to disable flow logs."
+  type = object({
+    retention_days              = number
+    traffic_analytics_enabled   = bool
+    traffic_analytics_interval  = number
+    network_watcher_name        = string
+    network_watcher_rg_name     = string
+    storage_account_tier        = string
+    storage_account_replication = string
+  })
+  default = null
+
+  validation {
+    condition     = var.flow_logs_config == null ? true : var.flow_logs_config.retention_days >= 1 && var.flow_logs_config.retention_days <= 365
+    error_message = "Retention days must be between 1 and 365."
+  }
+
+  validation {
+    condition     = var.flow_logs_config == null ? true : var.flow_logs_config.traffic_analytics_interval == 10 || var.flow_logs_config.traffic_analytics_interval == 60
+    error_message = "Traffic analytics interval must be either 10 or 60 minutes."
+  }
+
+  validation {
+    condition     = var.flow_logs_config == null ? true : contains(["Standard", "Premium"], var.flow_logs_config.storage_account_tier)
+    error_message = "Storage account tier must be either 'Standard' or 'Premium'."
+  }
+
+  validation {
+    condition     = var.flow_logs_config == null ? true : contains(["LRS", "GRS", "RAGRS", "ZRS", "GZRS", "RAGZRS"], var.flow_logs_config.storage_account_replication)
+    error_message = "Storage account replication must be one of: LRS, GRS, RAGRS, ZRS, GZRS, RAGZRS."
+  }
+}

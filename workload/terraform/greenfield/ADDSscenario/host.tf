@@ -108,6 +108,36 @@ resource "azurerm_windows_virtual_machine" "avd_vm" {
 }
 */
 
+# Virtual Machine Extension for AMA agent
+resource "azurerm_virtual_machine_extension" "ama" {
+  count = var.rdsh_count
+
+  name                      = "AzureMonitorWindowsAgent"
+  publisher                 = "Microsoft.Azure.Monitor"
+  type                      = "AzureMonitorWindowsAgent"
+  type_handler_version      = "1.22"
+  virtual_machine_id        = azurerm_windows_virtual_machine.avd_vm[count.index].id
+  automatic_upgrade_enabled = true
+}
+
+# Virtual Machine Extension for Microsoft Antimalware
+resource "azurerm_virtual_machine_extension" "mal" {
+  count = var.rdsh_count
+
+  name                       = "IaaSAntimalware"
+  publisher                  = "Microsoft.Azure.Security"
+  type                       = "IaaSAntimalware"
+  type_handler_version       = "1.3"
+  virtual_machine_id         = azurerm_windows_virtual_machine.avd_vm[count.index].id
+  auto_upgrade_minor_version = "true"
+
+  depends_on = [
+    # azurerm_virtual_machine_extension.domain_join,
+    # azurerm_virtual_machine_extension.vmext_dsc,
+    azurerm_virtual_machine_extension.ama
+  ]
+}
+
 # Virtual Machine Extension for Domain Join
 resource "azurerm_virtual_machine_extension" "domain_join" {
   count = var.rdsh_count
@@ -136,6 +166,11 @@ SETTINGS
   lifecycle {
     ignore_changes = [settings, protected_settings]
   }
+
+  depends_on = [
+    azurerm_virtual_machine_extension.ama,
+    azurerm_virtual_machine_extension.mal
+  ]
 }
 
 # Virtual Machine Extension for AVD Agent
@@ -171,33 +206,7 @@ SETTINGS
   ]
 }
 
-# Virtual Machine Extension for AMA agent
-resource "azurerm_virtual_machine_extension" "ama" {
-  count = var.rdsh_count
 
-  name                      = "AzureMonitorWindowsAgent"
-  publisher                 = "Microsoft.Azure.Monitor"
-  type                      = "AzureMonitorWindowsAgent"
-  type_handler_version      = "1.22"
-  virtual_machine_id        = azurerm_windows_virtual_machine.avd_vm[count.index].id
-  automatic_upgrade_enabled = true
-}
 
-# Virtual Machine Extension for Microsoft Antimalware
-resource "azurerm_virtual_machine_extension" "mal" {
-  count = var.rdsh_count
 
-  name                       = "IaaSAntimalware"
-  publisher                  = "Microsoft.Azure.Security"
-  type                       = "IaaSAntimalware"
-  type_handler_version       = "1.3"
-  virtual_machine_id         = azurerm_windows_virtual_machine.avd_vm[count.index].id
-  auto_upgrade_minor_version = "true"
-
-  depends_on = [
-    azurerm_virtual_machine_extension.domain_join,
-    azurerm_virtual_machine_extension.vmext_dsc,
-    azurerm_virtual_machine_extension.ama
-  ]
-}
 
