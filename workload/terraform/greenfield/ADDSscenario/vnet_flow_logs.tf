@@ -22,36 +22,13 @@ resource "azurerm_storage_account" "flow_logs_storage" {
   tags                     = local.tags
 }
 
-# # Enable Network Flow Logs
-# resource "azurerm_network_watcher_flow_log" "flow_logs" {
-#   count                = local.enable_flow_logs ? 1 : 0
-#   network_watcher_name = data.azurerm_network_watcher.network_watcher[0].name
-#   resource_group_name  = data.azurerm_network_watcher.network_watcher[0].resource_group_name
-#   name                 = "flow-log-${var.prefix}"
 
-#   network_security_group_id = module.network.vnet_id
-#   storage_account_id        = azurerm_storage_account.flow_logs_storage[0].id
-#   enabled                   = true
-#   version                   = 2
-
-#   retention_policy {
-#     enabled = true
-#     days    = var.flow_logs_config.retention_days
-#   }
-
-#   traffic_analytics {
-#     enabled               = var.flow_logs_config.traffic_analytics_enabled
-#     workspace_id          = module.avm_res_operationalinsights_workspace.resource.workspace_id
-#     workspace_region      = var.avdLocation
-#     workspace_resource_id = module.avm_res_operationalinsights_workspace.resource.id
-#     interval_in_minutes   = var.flow_logs_config.traffic_analytics_interval
-#   }
-# }
 
 # Use the AVM Network Watcher module with version 0.3.0
+# There is no way to support version 0.3.0 right now, there ae conflicts with the azurerm_network_watcher module
 module "network_watcher" {
   source  = "Azure/avm-res-network-networkwatcher/azurerm"
-  version = "0.2.0"
+  version = "0.3.0"
 
   # Only create when flow logs are enabled
   count = local.enable_flow_logs ? 1 : 0
